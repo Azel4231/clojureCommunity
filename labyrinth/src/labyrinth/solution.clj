@@ -20,7 +20,7 @@
 (defn solutions-at [lab pos]
   (if (= :Exit (get-in lab pos))
     [lab]
-    (walk (update-in lab pos (fn [_] 1)) pos)))
+    (walk (assoc-in lab pos 1) pos)))
 
 (defn solve [lab]
   (let [solutions (solutions-at lab [0 0])]
